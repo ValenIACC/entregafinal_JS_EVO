@@ -1,3 +1,11 @@
+@charset "UTF-8";
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: rgb(14, 14, 230);
     margin: 0;
@@ -5,41 +13,95 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.icon {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    border-radius: 15%;
+    }
 header {
-    background-color: #333;
-    color: white;
+    background-image: url('../fondoevo.jpg');
+    background-size: cover; 
+    background-position: center;
     display: flex;
     justify-content: space-between;
+    align-items:center;
+    flex-direction: column;
+    color: white;
+    width: 100%;
+    }
+#navbar ul {
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-}
-h1 {
-    color: aliceblue;
-}
-nav ul {
+    flex-wrap: wrap;
     list-style-type: none;
     padding: 0;
     margin: 0;
-}
-
-nav li {
+    }
+#navbar ul li .nav-link {
+    color: white;
+    font-size: 30px;
+    align-items: center;
+    text-align: center;
+    margin-left: 35px;
     display: inline-block;
     margin-right: 20px;
-}
-
-nav a {
+    }
+#navbar ul li a {
+    font-size: 30px;
     color: white;
     text-decoration: none;
-}
-
-main {
-    text-align: center;
-}
-
-main a {
-        width: 224px;
-        height: 248px;
-        padding: 20px;
-        background: #F0AD4E;
-        border-radius: 3px 3px 3px 3px;
+    padding: 5px;
     }
+#navbar ul li {
+    position:relative;
+    display:contents;
+    padding: 95px;
+    }
+#navbar ul li a:hover {
+    background: linear-gradient(to right,#d37000,#e8a200, #ffd92e);
+    padding: 5px;
+    border-radius: 35px;
+    }
+#navbar li:hover > ul {
+    display: block;
+    }
+h1 {
+    color: aliceblue;
+    background: linear-gradient(to right,#d37000,#e8a200, #ffd92e);
+    border-radius: 150px;
+    margin: 20px;
+    font-size: 50px;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.acceso-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.acceso {
+    background: linear-gradient(to right,#d37000,#e8a200, #ffd92e);
+    display: block;
+    padding: 40px 90px;
+    margin: 50px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 40px;
+}
+
+
+
+
+
+
+
+
