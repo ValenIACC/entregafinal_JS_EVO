@@ -142,7 +142,6 @@ const ejercicios = [
 ]
 
 let ejerciciosPlan = []
-
 let ejerciciosContenedor = document.getElementById("ejercicios-contenedor")
 function renderEjercicios(ejerciciosArray){
     ejerciciosArray.forEach(ejercicio => {
@@ -154,14 +153,12 @@ function renderEjercicios(ejerciciosArray){
                             <p> Peso:  ${ejercicio.peso}</p>
                             <button class="ejercicioAgregar" id="${ejercicio.id}"> +  Sumar a mi entrenamiento </button>`
         ejerciciosContenedor.appendChild(card)
+        addToCartButton(card, ejercicio.id);
     });
-
-    addToCartButton(card);
 }
 
-renderEjercicios(ejercicios)
 
-function addToCartButton () {
+function addToCartButton (card, id) {
     addButton = document.querySelectorAll(".ejercicioAgregar")
     addButton.forEach(button => {
         button.onclick = (e) => {
@@ -176,12 +173,14 @@ function addToCartButton () {
     })
     // Agregar evento de hover a los elementos de ejercicio
     card.addEventListener('mouseover', function() {
-    this.style.backgroundColor = 'lightgray';
+    this.style.backgroundColor = 'rgb(14, 14, 230);';
 });
 
 // Restablecer el estilo cuando el cursor sale del elemento
 card.addEventListener('mouseout', function() {
-    this.style.backgroundColor = 'white';
+    this.style.backgroundColor = 'rgb(14, 14, 230);';
 });
 
 }
+
+renderEjercicios(ejercicios)

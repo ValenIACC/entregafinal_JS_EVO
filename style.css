@@ -98,9 +98,47 @@ h1 {
     font-size: 40px;
 }
 
+#cart-section{
+    color: aliceblue;
+    align-items: center;
+    text-align: center;
+    padding: 45px;
+}
 
+#ejercicios-contenedor{
+    color: aliceblue;
+    align-items: center;
+    text-align: center;
+    padding: 45px;
+}
 
+.ejercicioAgregar{
+    background:linear-gradient(to right,#d37000,#e8a200, #ffd92e);
+    padding: 15px;
+    color: white;
+    border-radius: 80px;
+    margin-bottom: 80px;
+}
+.ejercicioAgregar:hover{
+    background:linear-gradient(to right,#ffd92e,#e8a200, #d37000);
+    padding: 19px;
+    color: white;
+    
+}
 
+.delete-btn{
+    background:linear-gradient(to right,#e31726,#e45a15, #e8a200);
+    padding: 15px;
+    color: white;
+    border-radius: 80px;
+    margin-bottom: 80px;
+}
+.delete-btn:hover{
+    background:linear-gradient(to right,#e8a200,#e45a15, #e31726);
+    padding: 19px;
+    color: white;
+    
+}
 
 
 

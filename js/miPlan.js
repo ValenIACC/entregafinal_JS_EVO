@@ -21,25 +21,22 @@ function renderPlan (cartItems) {
     const deleteButtons = document.querySelectorAll('.delete-btn');
     deleteButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Eliminar el ejercicio visualmente
             this.parentNode.remove();
     
-            // Obtener el ID del ejercicio a eliminar
+            
             const ejercicioId = this.parentNode.querySelector('.ejercicioAgregar').id;
-    
-            // Eliminar el ejercicio de la lista en el almacenamiento local
+
             cartStorage = cartStorage.filter(ejercicio => ejercicio.id !== parseInt(ejercicioId));
             localStorage.setItem("ejerciciosPlan", JSON.stringify(cartStorage));
         });
     });
-// Evento para marcar ejercicio como completado y cambiar color a verde
+    
 const completeButtons = document.querySelectorAll('.ejercicioAgregar');
 completeButtons.forEach(button => {
     button.addEventListener('click', function() {
-        // Agregar lógica para marcar el ejercicio como completado
         console.log('Ejercicio completado: ' + this.parentNode.querySelector('h3').innerText);
 
-        // Cambiar el color del botón a verde
+        
         this.style.backgroundColor = 'green';
         this.style.color = 'white';
     });
