@@ -21,7 +21,7 @@ body {
     border-radius: 15%;
     }
 header {
-    background-image: url('../fondoevo.jpg');
+    background-image: url('./fondoevo.jpg');
     background-size: cover; 
     background-position: center;
     display: flex;
