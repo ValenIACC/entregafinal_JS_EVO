@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta | EVO GYM</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <a href="../index.html">
+            <img class="icon" src="../LOGO EVO.jpg" alt="Evo GYM">
+        </a>
+        <nav>
+            <div id="navbar">
+                <ul>
+                    <li><a class="nav-link" href="../miPlan.html">Mi Plan</a></li>
+                    <li><a class="nav-link" href="../rutina.html">Rutina</a></li>
+                    <li><a class="nav-link" href="../sedes.html">Sedes</a></li>
+                    <li><a class="nav-link" href="./cuenta.html">Cuenta</a></li>
+                    <li><a class="nav-link" href="../notificaciones.html">Notificaciones</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="co-container">
+        <div class="container">
+            <h1 id="form-title">REGISTRARSE</h1>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" required>
+                </div>
+                <div class="form-group">
+                    <label for="usuario">Nombre de Usuario:</label>
+                    <input type="text" id="usuario" name="usuario" required>
+                </div>
+                <div class="form-group">
+                    <label for="contraseña">Contraseña:</label>
+                    <input type="password" id="contraseña" name="contraseña" required>
+                </div>
+                <div class="form-group">
+                    <label for="imagen">Cargar Imagen de Perfil:</label>
+                    <input type="file" id="imagen" name="imagen" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <button type="submit">Registrarse</button>
+                </div>
+            </form>
+            <form id="login-form" style="display: none;">
+                <input type="text" id="login-usuario" placeholder="Usuario" required>
+                <input type="password" id="login-contraseña" placeholder="Contraseña" required>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+            <script src="micuenta.js"></script>
+        </div>
+    </main>
+</body>
+</html>

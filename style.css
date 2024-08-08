@@ -139,7 +139,77 @@ h1 {
     color: white;
     
 }
+/* 
+------------------------ */
+.co-container{
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(14, 14, 230); /* Color de fondo */
+    margin: 0;
+}
+/* Estilo del contenedor del formulario */
+.container {
+    background-color: #1a5eb6; 
+    padding: 20px;
+    border-radius: 15px;
+    border-bottom: 15px solid transparent;
+    border-image: linear-gradient(to bottom, #e8a200, #e45a15, #e31726);
+    border-image-slice: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px; /* Ancho aumentado */
+    margin: 20px; /* Separación adicional */
+}
 
+/* Estilo del encabezado */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffffff;
+}
 
+/* Estilo de los grupos de formulario */
+.form-group {
+    margin-bottom: 20px; /* Espacio adicional entre campos */
+}
 
+/* Estilo de las etiquetas de los campos */
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fdfafa;
+    
+}
 
+/* Estilo de los campos de entrada */
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+/* Estilo del botón de registro */
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(to right, #e8a200, #e45a15, #e31726);
+    border: none;
+    border-radius: 34px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+/* Efecto de hover para el botón */
+.form-group button:hover {
+    background: linear-gradient(to right, #e31726, #e45a15, #e8a200);
+    transform: scale(1.05);
+}
