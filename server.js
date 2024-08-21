@@ -7,7 +7,10 @@ const app = express();
 const port = 6550;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:6550/',
+    credentials: true
+}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -53,6 +56,8 @@ app.post('/register', upload.single('profileImage'), (req, res) => {
 // Ruta para manejar el inicio de sesión
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
+    console.log('Users array:', users);
+    console.log('Login attempt:', { username, password });
 
     // Verifica las credenciales
     const user = users.find(user => user.username === username && user.password === password);
@@ -70,6 +75,7 @@ app.post('/login', (req, res) => {
         res.status(401).json({ message: 'Credenciales inválidas' });
     }
 });
+
 
 
 // Middleware para manejar errores globales

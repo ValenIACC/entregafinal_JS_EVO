@@ -213,3 +213,42 @@ h1 {
     background: linear-gradient(to right, #e31726, #e45a15, #e8a200);
     transform: scale(1.05);
 }
+
+
+
+/* SEDES */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.location {
+    margin-bottom: 20px;
+}
+
+.location h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.location img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.location a {
+    color: black; /* Cambia el color de los enlaces a negro */
+    text-decoration: none; /* Elimina la línea debajo del enlace */
+    font-weight: bold; /* Opcional: Hacer el texto del enlace en negrita */
+}
+
+.location a:hover {
+    color: gray; /* Color al pasar el mouse sobre el enlace */
+}

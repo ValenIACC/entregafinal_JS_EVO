@@ -40,33 +40,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Manejar el inicio de sesión
-    document.getElementById('login-form').addEventListener('submit', async (event) => {
-        event.preventDefault();
-
-        const username = document.getElementById('login-usuario').value;
-        const password = document.getElementById('login-contraseña').value;
-
-        try {
-            const response = await fetch('http://localhost:6550/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ username, password }),
-            });
-
-            const result = await response.json();
-
-            if (response.ok) {
-                localStorage.setItem('user', JSON.stringify(result.user));
-                window.location.href = 'profile.html';
-            } else {
-                alert(`Error: ${result.message || 'Error desconocido'}`);
+        // Manejar el inicio de sesión
+        document.getElementById('login-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+    
+            const username = document.getElementById('login-usuario').value;
+            const password = document.getElementById('login-contraseña').value;
+    
+            try {
+                const response = await fetch('http://localhost:6550/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ username, password }),
+                });
+    
+                const result = await response.json();
+    
+                if (response.ok) {
+                    localStorage.setItem('user', JSON.stringify(result.user));
+                    window.location.href = 'profile.html';
+                } else {
+                    alert(`Error: ${result.message || 'Error desconocido'}`);
+                }
+            } catch (error) {
+                console.error('Error en el inicio de sesión:', error);
+                alert('Ocurrió un error al iniciar sesión. Por favor, inténtalo de nuevo.');
             }
-        } catch (error) {
-            console.error('Error en el inicio de sesión:', error);
-            alert('Ocurrió un error al iniciar sesión. Por favor, inténtalo de nuevo.');
-        }
+        });
     });
-});

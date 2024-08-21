@@ -141,9 +141,10 @@ const ejercicios = [
     },
 ]
 
-let ejerciciosPlan = []
-let ejerciciosContenedor = document.getElementById("ejercicios-contenedor")
-function renderEjercicios(ejerciciosArray){
+let ejerciciosPlan = JSON.parse(localStorage.getItem("ejerciciosPlan")) || [];
+let ejerciciosContenedor = document.getElementById("ejercicios-contenedor");
+
+function renderEjercicios(ejerciciosArray) {
     ejerciciosArray.forEach(ejercicio => {
         const card = document.createElement("div");
         card.innerHTML = 
@@ -151,36 +152,42 @@ function renderEjercicios(ejerciciosArray){
                             <p> Series: ${ejercicio.series}</p>
                             <p> Repeticiones: ${ejercicio.repeticiones}</p>
                             <p> Peso:  ${ejercicio.peso}</p>
-                            <button class="ejercicioAgregar" id="${ejercicio.id}"> +  Sumar a mi entrenamiento </button>`
-        ejerciciosContenedor.appendChild(card)
+                            <button class="ejercicioAgregar" id="${ejercicio.id}"> +  Sumar a mi entrenamiento </button>`;
+        ejerciciosContenedor.appendChild(card);
         addToCartButton(card, ejercicio.id);
     });
 }
 
-
-function addToCartButton (card, id) {
-    addButton = document.querySelectorAll(".ejercicioAgregar")
+function addToCartButton(card, id) {
+    const addButton = document.querySelectorAll(".ejercicioAgregar");
     addButton.forEach(button => {
         button.onclick = (e) => {
-            const ejercicioId = e.currentTarget.id
-            const selectedEjercicio = ejercicios.find(ejercicio => ejercicio.id == ejercicioId)
+            const ejercicioId = e.currentTarget.id;
+            const selectedEjercicio = ejercicios.find(ejercicio => ejercicio.id == ejercicioId);
 
-            ejerciciosPlan.push(selectedEjercicio)
-            console.log(ejerciciosPlan)
+            const existingEjercicio = ejerciciosPlan.find(ejercicio => ejercicio.id == ejercicioId);
 
-            localStorage.setItem("ejerciciosPlan", JSON.stringify(ejerciciosPlan))
-        }
-    })
+            if (existingEjercicio) {
+                existingEjercicio.series += selectedEjercicio.series;
+                existingEjercicio.peso += selectedEjercicio.peso;
+            } else {
+                ejerciciosPlan.push(selectedEjercicio);
+            }
+
+            console.log(ejerciciosPlan);
+            localStorage.setItem("ejerciciosPlan", JSON.stringify(ejerciciosPlan));
+        };
+    });
+
     // Agregar evento de hover a los elementos de ejercicio
     card.addEventListener('mouseover', function() {
-    this.style.backgroundColor = 'rgb(14, 14, 230);';
-});
+        this.style.backgroundColor = 'rgb(14, 14, 230);';
+    });
 
-// Restablecer el estilo cuando el cursor sale del elemento
-card.addEventListener('mouseout', function() {
-    this.style.backgroundColor = 'rgb(14, 14, 230);';
-});
-
+    // Restablecer el estilo cuando el cursor sale del elemento
+    card.addEventListener('mouseout', function() {
+        this.style.backgroundColor = '';
+    });
 }
 
-renderEjercicios(ejercicios)
+renderEjercicios(ejercicios);
